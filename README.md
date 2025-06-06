@@ -98,8 +98,10 @@ In this case, we used amplicons from the elongation factor Tu gene.
 
 6. **🚀 Actually run ONT-AmpSeq**  
 
+If you already using Blis server, I hava already install the ONT-AmpSeq pipeline env, it's called ONT_Amp_bash, otherwise, newly install in your own environment should called OTUtable.
+
  ```bash
-  micromamba activate OTUtable
+  micromamba activate ONT_Amp_bash
   bash workflow/scripts/ONT-AmpSeq_bash_version.sh \
     -t 4 -j 3 \
     -i .test/test_data \

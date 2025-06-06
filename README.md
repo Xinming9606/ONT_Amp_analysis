@@ -46,14 +46,14 @@ Please contact 👉 c.du@biology.leidenuniv.nl to request access.
 📘 Make your admin happy!
 Before using the server, read the IBL Bioinformatics Wiki — it contains essential guidelines and good practices. 💡
 
-2. **📚 Read the ONT-AmpSeq tutorial (recommended!)**
+2. **📚 Read the ONT-AmpSeq tutorial (recommended!)**  
    This workflow is adapted from ONT-AmpSeq by Mathias Helmer Eskildsen 🧠.
    We've customized it for:
         - The BLIS server setup 💻
         - The needs of the Microbiome Ecology Group (MEG) 🧬
    🔧 Some steps may look different due to file paths, tools, or lab-specific choices — but the core logic remains the same.
 
-3. **🧰 Install ONT-AmpSeq (Bash version)**
+3. **🧰 Install ONT-AmpSeq (Bash version)**  
    ⚠️ We do not use Snakemake here, as it's tricky to configure on the BLIS server.
    ✅ Instead, we recommend using the bash-script version of ONT-AmpSeq.
 
@@ -62,7 +62,7 @@ cd /path/to/home-dir/ONT-AmpSeq-main
 micromamba env create -f ONT-AmpSeq_bash_version.yml
 ```
 
-4. **🔍 Check your data quality with Nanoplot**
+4. **🔍 Check your data quality with Nanoplot**  
    If you want to know a bit more about [Nanoplot](https://github.com/wdecoster/NanoPlot)
 
 ```
@@ -83,13 +83,13 @@ length_upper_limit=1200
 
 Q-score=20 (for example)
 
-5. 🧬 Prepare your BLAST database
+5. **🧬 Prepare your BLAST database**  
    In this case, we used amplicons from the elongation factor Tu gene.
 
    📦 The BLAST database is available at [KovacsLab-BLASTdb](https://github.com/Xinming9606/KovacsLab-BLASTdb
 )
 
-6. 🚀 Actually run ONT-AmpSeq
+6. **🚀 Actually run ONT-AmpSeq**  
 
 ```
 micromamba activate OTUtable

@@ -36,7 +36,7 @@ No prior scripting knowledge is needed — just follow the folder structure and 
 
 1. **🔐 Log in to the BLIS server**  
 
-   Open your terminal and connect to the BLIS server:
+Open your terminal and connect to the BLIS server:
 
    ```bash
    ssh 132.229.120.188
@@ -61,9 +61,9 @@ Before using the server, read the IBL Bioinformatics Wiki — it contains essent
 
 3. **🧰 Install ONT-AmpSeq (Bash version)**  
 
-   ⚠️ We do not use Snakemake here, as it's tricky to configure on the BLIS server.
+⚠️ We do not use Snakemake here, as it's tricky to configure on the BLIS server.
 
-   ✅ Instead, we recommend using the bash-script version of ONT-AmpSeq.
+✅ Instead, we recommend using the bash-script version of ONT-AmpSeq.
 
     ```bash
    cd /path/to/home-dir/ONT-AmpSeq-main
@@ -72,7 +72,7 @@ Before using the server, read the IBL Bioinformatics Wiki — it contains essent
 
 4. **🔍 Check your data quality with Nanoplot**  
 
-   If you want to know a bit more about [Nanoplot](https://github.com/wdecoster/NanoPlot)
+If you want to know a bit more about [Nanoplot](https://github.com/wdecoster/NanoPlot)
 
     ```bash
   cd /path/to/home-dir/ONT-AmpSeq-main
@@ -89,15 +89,15 @@ Before using the server, read the IBL Bioinformatics Wiki — it contains essent
 
 5. **🧬 Prepare your BLAST database**  
 
-   In this case, we used amplicons from the elongation factor Tu gene.
+In this case, we used amplicons from the elongation factor Tu gene.
 
-   📦 The BLAST database is available at [KovacsLab-BLASTdb](https://github.com/Xinming9606/KovacsLab-BLASTdb
+📦 The BLAST database is available at [KovacsLab-BLASTdb](https://github.com/Xinming9606/KovacsLab-BLASTdb
 )
 
 
 6. **🚀 Actually run ONT-AmpSeq**  
 
-  ```
+    ```bash
   micromamba activate OTUtable
   bash workflow/scripts/ONT-AmpSeq_bash_version.sh \
     -t 4 -j 3 \

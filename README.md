@@ -68,17 +68,13 @@ Before using the server, read the IBL Bioinformatics Wiki — it contains essent
     ```bash
    cd /path/to/home-dir/ONT-AmpSeq-main
    micromamba env create -f ONT-AmpSeq_bash_version.yml
-   
-   ```bash
-  cd /path/to/home-dir/ONT-AmpSeq-main
-  micromamba env create -f ONT-AmpSeq_bash_version.yml
 
 
 4. **🔍 Check your data quality with Nanoplot**  
 
    If you want to know a bit more about [Nanoplot](https://github.com/wdecoster/NanoPlot)
 
-   ```bash
+    ```bash
   cd /path/to/home-dir/ONT-AmpSeq-main
   micromamba env create -f stats.yml
   micromamba activate stats

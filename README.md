@@ -47,15 +47,15 @@ Please contact 👉 c.du@biology.leidenuniv.nl to request access.
 Before using the server, read the IBL Bioinformatics Wiki — it contains essential guidelines and good practices. 💡
 
 2. **📚 Read the ONT-AmpSeq tutorial (recommended!)**
-This workflow is adapted from ONT-AmpSeq by Mathias Helmer Eskildsen 🧠.
-We've customized it for:
-- The BLIS server setup 💻
-- The needs of the Microbiome Ecology Group (MEG) 🧬
-🔧 Some steps may look different due to file paths, tools, or lab-specific choices — but the core logic remains the same.
+   This workflow is adapted from ONT-AmpSeq by Mathias Helmer Eskildsen 🧠.
+   We've customized it for:
+        - The BLIS server setup 💻
+        - The needs of the Microbiome Ecology Group (MEG) 🧬
+   🔧 Some steps may look different due to file paths, tools, or lab-specific choices — but the core logic remains the same.
 
 3. **🧰 Install ONT-AmpSeq (Bash version)**
-⚠️ We do not use Snakemake here, as it's tricky to configure on the BLIS server.
-✅ Instead, we recommend using the bash-script version of ONT-AmpSeq.
+   ⚠️ We do not use Snakemake here, as it's tricky to configure on the BLIS server.
+   ✅ Instead, we recommend using the bash-script version of ONT-AmpSeq.
 
 ```
 cd /path/to/home-dir/ONT-AmpSeq-main
@@ -63,7 +63,8 @@ micromamba env create -f ONT-AmpSeq_bash_version.yml
 ```
 
 4. **🔍 Check your data quality with Nanoplot**
-   If you want to know a bit more about [Nanoplot] (https://github.com/wdecoster/NanoPlot)
+   If you want to know a bit more about [Nanoplot](https://github.com/wdecoster/NanoPlot)
+
 ```
 cd /path/to/home-dir/ONT-AmpSeq-main
 micromamba env create -f stats.yml
@@ -76,17 +77,17 @@ You should see your read quality under the stats/ directory.
 
 Based on the report, you can set these parameters for the next step:
 
-length_lower_limit=1200
+length_lower_limit=800
 
-length_upper_limit=1600
+length_upper_limit=1200
 
 Q-score=20 (for example)
 
 5. 🧬 Prepare your BLAST database
-In this case, we used amplicons from the elongation factor Tu gene.
+   In this case, we used amplicons from the elongation factor Tu gene.
 
-📦 The BLAST database is available at:
-https://github.com/Xinming9606/KovacsLab-BLASTdb
+   📦 The BLAST database is available at [KovacsLab-BLASTdb](https://github.com/Xinming9606/KovacsLab-BLASTdb
+)
 
 6. 🚀 Actually run ONT-AmpSeq
 

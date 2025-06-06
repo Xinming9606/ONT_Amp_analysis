@@ -65,6 +65,10 @@ Before using the server, read the IBL Bioinformatics Wiki — it contains essent
 
    ✅ Instead, we recommend using the bash-script version of ONT-AmpSeq.
 
+    ```bash
+   cd /path/to/home-dir/ONT-AmpSeq-main
+   micromamba env create -f ONT-AmpSeq_bash_version.yml
+   
    ```bash
   cd /path/to/home-dir/ONT-AmpSeq-main
   micromamba env create -f ONT-AmpSeq_bash_version.yml

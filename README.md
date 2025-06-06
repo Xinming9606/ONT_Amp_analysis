@@ -39,8 +39,10 @@ No prior scripting knowledge is needed — just follow the folder structure and 
 
    ```bash
    ssh 132.229.120.188
+   
 🧑‍💻 Don’t have an account?
 Please contact 👉 c.du@biology.leidenuniv.nl to request access.
+
 📘 Make your admin happy!
 Before using the server, read the IBL Bioinformatics Wiki — it contains essential guidelines and good practices. 💡
 
@@ -51,7 +53,7 @@ We've customized it for:
 - The needs of the Microbiome Ecology Group (MEG) 🧬
 🔧 Some steps may look different due to file paths, tools, or lab-specific choices — but the core logic remains the same.
 
-3. 🧰 Install ONT-AmpSeq (Bash version)
+3. **🧰 Install ONT-AmpSeq (Bash version)**
 ⚠️ We do not use Snakemake here, as it's tricky to configure on the BLIS server.
 ✅ Instead, we recommend using the bash-script version of ONT-AmpSeq.
 
@@ -60,8 +62,8 @@ cd /path/to/home-dir/ONT-AmpSeq-main
 micromamba env create -f ONT-AmpSeq_bash_version.yml
 ```
 
-4. 🔍 Check your data quality
-
+4. **🔍 Check your data quality with Nanoplot**
+   If you want to know a bit more about [Nanoplot] (https://github.com/wdecoster/NanoPlot)
 ```
 cd /path/to/home-dir/ONT-AmpSeq-main
 micromamba env create -f stats.yml

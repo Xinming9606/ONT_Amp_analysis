@@ -34,6 +34,24 @@ No prior scripting knowledge is needed — just follow the folder structure and 
 
 ## 🚀 How to run this workflow
 
-1. **Log in to the BLIS server**:
+1. **🔐 Log in to the BLIS server**  
+   Open your terminal and connect to the BLIS server:
+
    ```bash
-   ssh your_username@blis.ibl.liu.se
+   ssh 132.229.120.188
+🧑‍💻 Don’t have an account?
+Please contact 👉 c.du@biology.leidenuniv.nl to request access.
+
+📘 Make your admin happy!
+Before using the server, read the IBL Bioinformatics Wiki — it contains essential guidelines and good practices. 💡
+
+📚 Read the ONT-AmpSeq tutorial (recommended!)
+This workflow is adapted from ONT-AmpSeq by Mathias Helmer Eskildsen 🧠.
+
+We've customized it for:
+
+The BLIS server setup 💻
+
+The needs of the Microbiome Ecology Group (MEG) 🧬
+
+🔧 Some steps may look different due to file paths, tools, or lab-specific choices — but the core logic remains the same.

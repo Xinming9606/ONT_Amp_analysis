@@ -51,14 +51,15 @@ We've customized it for:
 - The needs of the Microbiome Ecology Group (MEG) 🧬
 🔧 Some steps may look different due to file paths, tools, or lab-specific choices — but the core logic remains the same.
 
-3. 🧰 Install ONT-AmpSeq (Bash version)
+### 3. 🧰 Install ONT-AmpSeq (Bash version)
 
 > ⚠️ We do **not** use Snakemake here, as it's tricky to configure on the BLIS server.  
 > ✅ Instead, we recommend using the bash-script version of ONT-AmpSeq.
 
-   ```bash
-   cd /path/to/home-dir/ONT-AmpSeq-main
-   micromamba env create -f ONT-AmpSeq_bash_version.yml
+```bash
+cd /path/to/home-dir/ONT-AmpSeq-main
+micromamba env create -f ONT-AmpSeq_bash_version.yml
+
 
 4. **📊 Check your data quality (important!)**
 To inspect your sequencing reads quality, use the nanoplot.sh script:

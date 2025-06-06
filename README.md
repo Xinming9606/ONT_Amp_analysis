@@ -35,6 +35,7 @@ No prior scripting knowledge is needed — just follow the folder structure and 
 ## 🚀 How to run this workflow
 
 1. **🔐 Log in to the BLIS server**  
+
    Open your terminal and connect to the BLIS server:
 
    ```bash
@@ -47,16 +48,19 @@ Please contact 👉 c.du@biology.leidenuniv.nl to request access.
 Before using the server, read the IBL Bioinformatics Wiki — it contains essential guidelines and good practices. 💡
 
 2. **📚 Read the ONT-AmpSeq tutorial (recommended!)**  
+
   This workflow is adapted from ONT-AmpSeq by Mathias Helmer Eskildsen 🧠.
 
-We've customized it for:
+  We've customized it for:
         - The BLIS server setup 💻
         - The needs of the Microbiome Ecology Group (MEG) 🧬
-        
-🔧 Some steps may look different due to file paths, tools, or lab-specific choices — but the core logic remains the same.
+  
+  🔧 Some steps may look different due to file paths, tools, or lab-specific choices — but the core logic remains the same.
 
-4. **🧰 Install ONT-AmpSeq (Bash version)**  
+3. **🧰 Install ONT-AmpSeq (Bash version)**  
+
    ⚠️ We do not use Snakemake here, as it's tricky to configure on the BLIS server.
+
    ✅ Instead, we recommend using the bash-script version of ONT-AmpSeq.
 
   ```
@@ -65,6 +69,7 @@ We've customized it for:
   ```
 
 4. **🔍 Check your data quality with Nanoplot**  
+
    If you want to know a bit more about [Nanoplot](https://github.com/wdecoster/NanoPlot)
 
   ```
@@ -75,17 +80,13 @@ We've customized it for:
   ```
 
 You should see your read quality under the stats/ directory.
+
 📄 The most important file is: NanoPlot-report.html
 
-Based on the report, you can set these parameters for the next step:
-
-length_lower_limit=800
-
-length_upper_limit=1200
-
-Q-score=20 (for example)
+Based on the report, you can set these parameters for the next step: length_lower_limit=800, length_upper_limit=1200, Q-score=20 (for example)
 
 5. **🧬 Prepare your BLAST database**  
+
    In this case, we used amplicons from the elongation factor Tu gene.
 
    📦 The BLAST database is available at [KovacsLab-BLASTdb](https://github.com/Xinming9606/KovacsLab-BLASTdb

@@ -38,14 +38,15 @@ No prior scripting knowledge is needed — just follow the folder structure and 
 
    Open your terminal and connect to the BLIS server:
 
-   ```bash
-   ssh 132.229.120.188
+```bash
+ssh 132.229.120.188
    
 🧑‍💻 Don’t have an account?
 Please contact 👉 c.du@biology.leidenuniv.nl to request access.
 
 📘 Make your admin happy!
 Before using the server, read the IBL Bioinformatics Wiki — it contains essential guidelines and good practices. 💡
+
 
 2. **📚 Read the ONT-AmpSeq tutorial (recommended!)**  
 
@@ -56,6 +57,7 @@ Before using the server, read the IBL Bioinformatics Wiki — it contains essent
         - The needs of the Microbiome Ecology Group (MEG) 🧬
   
   🔧 Some steps may look different due to file paths, tools, or lab-specific choices — but the core logic remains the same.
+
 
 3. **🧰 Install ONT-AmpSeq (Bash version)**  
 
@@ -68,6 +70,7 @@ Before using the server, read the IBL Bioinformatics Wiki — it contains essent
   micromamba env create -f ONT-AmpSeq_bash_version.yml
   ```
 
+
 4. **🔍 Check your data quality with Nanoplot**  
 
    If you want to know a bit more about [Nanoplot](https://github.com/wdecoster/NanoPlot)
@@ -79,11 +82,12 @@ Before using the server, read the IBL Bioinformatics Wiki — it contains essent
   bash workflow/scripts/nanoplot.sh -t 1 -j 1 -o .test/stats_out -i .test/test_data
   ```
 
-You should see your read quality under the stats/ directory.
+  You should see your read quality under the stats/ directory.
 
-📄 The most important file is: NanoPlot-report.html
+  📄 The most important file is: NanoPlot-report.html
 
-Based on the report, you can set these parameters for the next step: length_lower_limit=800, length_upper_limit=1200, Q-score=20 (for example)
+  Based on the report, you can set these parameters for the next step: length_lower_limit=800, length_upper_limit=1200, Q-score=20 (for example)
+
 
 5. **🧬 Prepare your BLAST database**  
 
@@ -91,6 +95,7 @@ Based on the report, you can set these parameters for the next step: length_lowe
 
    📦 The BLAST database is available at [KovacsLab-BLASTdb](https://github.com/Xinming9606/KovacsLab-BLASTdb
 )
+
 
 6. **🚀 Actually run ONT-AmpSeq**  
 
@@ -104,5 +109,5 @@ Based on the report, you can set these parameters for the next step: length_lowe
     -r blastn \
     -d .test/databases/Elongation_factor_Tu
   ```
-🛠 Adjust the -l, -u, and -q parameters based on your NanoPlot results.
+  🛠 Adjust the -l, -u, and -q parameters based on your NanoPlot results.
 

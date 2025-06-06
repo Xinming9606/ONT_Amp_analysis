@@ -51,7 +51,7 @@ Before using the server, read the IBL Bioinformatics Wiki — it contains essent
 
 2. **📚 Read the ONT-AmpSeq tutorial (recommended!)**  
 
-  This workflow is adapted from ONT-AmpSeq by Mathias Helmer Eskildsen 🧠.
+  This workflow is adapted from [ONT-AmpSeq](https://github.com/MathiasEskildsen/ONT-AmpSeq) by Mathias Helmer Eskildsen 🧠.
 
   We've customized it for:
         - The BLIS server setup 💻

@@ -97,7 +97,6 @@ In this case, we used amplicons from the elongation factor Tu gene.
 
 6. **🚀 Actually run ONT-AmpSeq**  
 
-  ```bash
   micromamba activate OTUtable
   bash workflow/scripts/ONT-AmpSeq_bash_version.sh \
     -t 4 -j 3 \
@@ -106,6 +105,6 @@ In this case, we used amplicons from the elongation factor Tu gene.
     -l 1200 -u 1600 -q 20 \
     -r blastn \
     -d .test/databases/Elongation_factor_Tu
-**
+
   🛠 Adjust the -l, -u, and -q parameters based on your NanoPlot results.
 

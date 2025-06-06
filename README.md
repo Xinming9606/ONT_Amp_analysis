@@ -40,7 +40,8 @@ Open your terminal and connect to the BLIS server:
 
    ```bash
    ssh 132.229.120.188
-   
+   ```
+
 🧑‍💻 Don’t have an account?
 Please contact 👉 c.du@biology.leidenuniv.nl to request access.
 

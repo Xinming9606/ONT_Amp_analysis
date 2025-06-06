@@ -57,20 +57,20 @@ Before using the server, read the IBL Bioinformatics Wiki — it contains essent
    ⚠️ We do not use Snakemake here, as it's tricky to configure on the BLIS server.
    ✅ Instead, we recommend using the bash-script version of ONT-AmpSeq.
 
-```
-cd /path/to/home-dir/ONT-AmpSeq-main
-micromamba env create -f ONT-AmpSeq_bash_version.yml
-```
+  ```
+  cd /path/to/home-dir/ONT-AmpSeq-main
+  micromamba env create -f ONT-AmpSeq_bash_version.yml
+  ```
 
 4. **🔍 Check your data quality with Nanoplot**  
    If you want to know a bit more about [Nanoplot](https://github.com/wdecoster/NanoPlot)
 
-```
-cd /path/to/home-dir/ONT-AmpSeq-main
-micromamba env create -f stats.yml
-micromamba activate stats
-bash workflow/scripts/nanoplot.sh -t 1 -j 1 -o .test/stats_out -i .test/test_data
-```
+  ```
+  cd /path/to/home-dir/ONT-AmpSeq-main
+  micromamba env create -f stats.yml
+  micromamba activate stats
+  bash workflow/scripts/nanoplot.sh -t 1 -j 1 -o .test/stats_out -i .test/test_data
+  ```
 
 You should see your read quality under the stats/ directory.
 📄 The most important file is: NanoPlot-report.html
@@ -91,15 +91,15 @@ Q-score=20 (for example)
 
 6. **🚀 Actually run ONT-AmpSeq**  
 
-```
-micromamba activate OTUtable
-bash workflow/scripts/ONT-AmpSeq_bash_version.sh \
-  -t 4 -j 3 \
-  -i .test/test_data \
-  -o output_test \
-  -l 1200 -u 1600 -q 20 \
-  -r blastn \
-  -d .test/databases/Elongation_factor_Tu
-```
+  ```
+  micromamba activate OTUtable
+  bash workflow/scripts/ONT-AmpSeq_bash_version.sh \
+    -t 4 -j 3 \
+    -i .test/test_data \
+    -o output_test \
+    -l 1200 -u 1600 -q 20 \
+    -r blastn \
+    -d .test/databases/Elongation_factor_Tu
+  ```
 🛠 Adjust the -l, -u, and -q parameters based on your NanoPlot results.
 

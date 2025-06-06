@@ -98,7 +98,9 @@ In this case, we used amplicons from the elongation factor Tu gene.
 
 6. **🚀 Actually run ONT-AmpSeq**  
 
-If you already using Blis server, I hava already install the ONT-AmpSeq pipeline env, it's called ONT_Amp_bash, otherwise, newly install in your own environment should called OTUtable.
+If you're already using the Blis server, the ONT-AmpSeq pipeline environment has been installed — it's called ONT_Amp_bash.
+If you're installing it in your own environment, the environment should be named OTUtable.
+
 
  ```bash
   micromamba activate ONT_Amp_bash

@@ -60,28 +60,25 @@ We've customized it for:
 cd /path/to/home-dir/ONT-AmpSeq-main
 micromamba env create -f ONT-AmpSeq_bash_version.yml
 
-4. 📊 Check your data quality (important!)
+4. **📊 Check your data quality (important!)**
 To inspect your sequencing reads quality, use the nanoplot.sh script:
 
-bash
-Copy
-Edit
 cd /path/to/home-dir/ONT-AmpSeq-main
 micromamba env create -f stats.yml
 micromamba activate stats
 
+```bash
 bash workflow/scripts/nanoplot.sh \
   -t 1 \
   -j 1 \
   -o .test/stats_out \
   -i .test/test_data
+
 📁 This will generate a report inside .test/stats_out/
 📌 The key file is:
 
-txt
-Copy
-Edit
 NanoPlot-report.html
+
 Open this file in your browser to evaluate:
 
 Average read quality (Q-score)
@@ -91,12 +88,10 @@ Length distribution of reads
 💡 Based on this report, you can choose filtering thresholds for the next step.
 In our case, we typically set:
 
-txt
-Copy
-Edit
 length_lower_limit = 1200
 length_upper_limit = 1600
 Q-score threshold = 20
+
 5. 🔎 Prepare your BLAST database
 For this project, we use elongation factor Tu (EF-Tu) amplicons.
 
@@ -110,9 +105,7 @@ Make sure to download the EF-Tu database and place it under:
 6. 🧪 Run ONT-AmpSeq (bash version)
 Activate the environment and run the main workflow script:
 
-bash
-Copy
-Edit
+```bash
 micromamba activate OTUtable
 
 bash workflow/scripts/ONT-AmpSeq_bash_version.sh \
@@ -125,6 +118,7 @@ bash workflow/scripts/ONT-AmpSeq_bash_version.sh \
   -q 20 \
   -r blastn \
   -d .test/databases/Elongation_factor_Tu
+
 📌 Notes:
 
 -l, -u, and -q should be adapted based on your NanoPlot-report.html results

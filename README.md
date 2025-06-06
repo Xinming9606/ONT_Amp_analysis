@@ -51,79 +51,52 @@ We've customized it for:
 - The needs of the Microbiome Ecology Group (MEG) 🧬
 🔧 Some steps may look different due to file paths, tools, or lab-specific choices — but the core logic remains the same.
 
-### 3. 🧰 Install ONT-AmpSeq (Bash version)
 
-> ⚠️ We do **not** use Snakemake here, as it's tricky to configure on the BLIS server.  
-> ✅ Instead, we recommend using the bash-script version of ONT-AmpSeq.
+3. 🧰 Install ONT-AmpSeq (Bash version)
+⚠️ We do not use Snakemake here, as it's tricky to configure on the BLIS server.
+✅ Instead, we recommend using the bash-script version of ONT-AmpSeq.
 
-```bash
+bash
+Copy
+Edit
 cd /path/to/home-dir/ONT-AmpSeq-main
 micromamba env create -f ONT-AmpSeq_bash_version.yml
-
-
-4. **📊 Check your data quality (important!)**
-To inspect your sequencing reads quality, use the nanoplot.sh script:
-
+4. 🔍 Check your data quality
+bash
+Copy
+Edit
 cd /path/to/home-dir/ONT-AmpSeq-main
 micromamba env create -f stats.yml
 micromamba activate stats
+bash workflow/scripts/nanoplot.sh -t 1 -j 1 -o .test/stats_out -i .test/test_data
+You should see your read quality under the stats/ directory.
+📄 The most important file is: NanoPlot-report.html
 
-```bash
-bash workflow/scripts/nanoplot.sh \
-  -t 1 \
-  -j 1 \
-  -o .test/stats_out \
-  -i .test/test_data
+Based on the report, you can set these parameters for the next step:
 
-📁 This will generate a report inside .test/stats_out/
-📌 The key file is:
+length_lower_limit=1200
 
-NanoPlot-report.html
+length_upper_limit=1600
 
-Open this file in your browser to evaluate:
+Q-score=20 (for example)
 
-Average read quality (Q-score)
+5. 🧬 Prepare your BLAST database
+In this case, we used amplicons from the elongation factor Tu gene.
 
-Length distribution of reads
+📦 The BLAST database is available at:
+https://github.com/Xinming9606/KovacsLab-BLASTdb
 
-💡 Based on this report, you can choose filtering thresholds for the next step.
-In our case, we typically set:
-
-length_lower_limit = 1200
-length_upper_limit = 1600
-Q-score threshold = 20
-
-5. 🔎 Prepare your BLAST database
-For this project, we use elongation factor Tu (EF-Tu) amplicons.
-
-The curated BLAST database can be found at:
-
-📦 KovacsLab-BLASTdb
-
-Make sure to download the EF-Tu database and place it under:
-.test/databases/Elongation_factor_Tu
-
-6. 🧪 Run ONT-AmpSeq (bash version)
-Activate the environment and run the main workflow script:
-
-```bash
+6. 🚀 Actually run ONT-AmpSeq
+bash
+Copy
+Edit
 micromamba activate OTUtable
-
 bash workflow/scripts/ONT-AmpSeq_bash_version.sh \
-  -t 4 \
-  -j 3 \
+  -t 4 -j 3 \
   -i .test/test_data \
   -o output_test \
-  -l 1200 \
-  -u 1600 \
-  -q 20 \
+  -l 1200 -u 1600 -q 20 \
   -r blastn \
   -d .test/databases/Elongation_factor_Tu
+🛠 Adjust the -l, -u, and -q parameters based on your NanoPlot results.
 
-📌 Notes:
-
--l, -u, and -q should be adapted based on your NanoPlot-report.html results
-
--r blastn specifies the method used for taxonomic assignment
-
--d should point to your local copy of the EF-Tu BLAST database

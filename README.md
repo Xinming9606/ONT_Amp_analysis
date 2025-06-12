@@ -112,3 +112,7 @@ If you're installing it in your own environment, the environment should be named
   ```
   🛠 Adjust the -l, -u, and -q parameters based on your NanoPlot results.
 
+
+  blastn -query /path/to/home-dir/ONT-AmpSeq/sample_output/5_otus_cat/otus_concatenated.fa -out /path/to/home-dir/ONT-AmpSeq/sample_output/blast_result.txt -db Elongation_factor_Tu2 -outfmt 10 -max_target_seq 1
+
+

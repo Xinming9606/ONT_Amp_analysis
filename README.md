@@ -112,7 +112,24 @@ If you're installing it in your own environment, the environment should be named
   ```
   🛠 Adjust the -l, -u, and -q parameters based on your NanoPlot results.
 
+7. **⚠️ Issues with vsearch**
 
-  blastn -query /path/to/home-dir/ONT-AmpSeq/sample_output/5_otus_cat/otus_concatenated.fa -out /path/to/home-dir/ONT-AmpSeq/sample_output/blast_result.txt -db Elongation_factor_Tu2 -outfmt 10 -max_target_seq 1
+Sometimes vsearch may not generate results if your read quality is too low — this can lead to an empty 8_OTUtable folder. 😢
+
+👉 Depending on your research goals:
+
+If you do not need a perfect abundance plot and just want to check what taxa are present in your sample, you can use the concatenated OTU file in 5_otus_cat for a direct BLAST search. 🔍
+
+For example:
+
+```bash
+blastn -query /path/to/home-dir/ONT-AmpSeq/sample_output/5_otus_cat/otus_concatenated.fa \
+       -out /path/to/home-dir/ONT-AmpSeq/sample_output/blast_result.txt \
+       -db Elongation_factor_Tu2 \
+       -outfmt 10 \
+       -max_target_seqs 1
+```
+
+✨ In this example, I used the concatenated OTU file to run a BLAST search against our Elongation Factor Tu database.
 
 

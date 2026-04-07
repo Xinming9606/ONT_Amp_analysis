@@ -46,7 +46,7 @@ Open your terminal and connect to the BLIS server:
 Please contact 👉 c.du@biology.leidenuniv.nl to request access.
 
 📘 Make your admin happy!
-Before using the server, read the IBL Bioinformatics Wiki — it contains essential guidelines and good practices. 💡
+Before using the server, read the [IBL Bioinformatics Wiki](https://ibl-bioinformatics-wiki.readthedocs.io/IBL_servers/Intro.html#get-access) — it contains essential guidelines and good practices. 💡
 
 
 2. **📚 Read the ONT-AmpSeq tutorial (recommended!)**  

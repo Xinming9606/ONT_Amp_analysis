@@ -39,7 +39,7 @@ No prior scripting knowledge is needed — just follow the folder structure and 
 Open your terminal and connect to the BLIS server:
 
    ```bash
-   ssh 132.229.120.188
+   ssh 
    ```
 
 🧑‍💻 Don’t have an account?

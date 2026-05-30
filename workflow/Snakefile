@@ -1,0 +1,44 @@
+# Main entrypoint of the workflow.
+# Please change the rule all to to your needs (blast or sintax or both, 97 or 99% similarity, etc.)
+# You can get both sintax and blast annotation by adding the corresponding output in the rule all.
+import os
+import re
+from snakemake.utils import min_version
+
+min_version("7.18.2")
+
+
+configfile: "config/config.yaml"
+
+
+# Rules
+include: "rules/common.smk"
+include: "rules/01-concatenate_fastq.smk"
+include: "rules/02-filtering.smk"
+include: "rules/03-clustering.smk"
+include: "rules/04-mapping.smk"
+include: "rules/05-polish_racon.smk"
+include: "rules/06-relabel.smk"
+include: "rules/07-clustering_identity.smk"
+include: "rules/08-taxonomy.smk"
+include: "rules/09-fix_otu_table.smk"
+include: "rules/10-prep_for_ampvis2.smk"
+include: "rules/11-prep_for_phyloseq.smk"
+include: "rules/12-phyloseq_abund_blast.smk"
+include: "rules/13-ampvis2_std_plots.smk"
+include: "rules/capture_config.smk"  # <- this is a custom rule to capture the config file and changes to config file
+
+
+# Validate the configuration values, using
+validate_boolean_config(config["include_blast_output"], "include_blast_output")
+validate_boolean_config(config["include_sintax_output"], "include_sintax_output")
+
+# Assign the configuration values to variables
+include_blast_output = config["include_blast_output"]
+include_sintax_output = config["include_sintax_output"]
+
+
+## Function to generate output files for "rule all" are defined in the common.smk file
+rule all:
+    input:
+        prepare_inputs(),

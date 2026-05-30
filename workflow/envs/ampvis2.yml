@@ -1,0 +1,7 @@
+name: ampvis2
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - r-base=4.3.1
+  - r-ampvis2=2.8.6

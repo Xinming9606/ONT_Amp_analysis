@@ -1,0 +1,6 @@
+name: filtering
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - chopper=0.7.0

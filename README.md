@@ -58,7 +58,7 @@ Before using the server, read the [IBL Bioinformatics Wiki](https://ibl-bioinfor
         - The needs of the Microbiome Ecology Group (MEG) 🧬
   
   🔧 Some steps may look different due to file paths, tools, or lab-specific choices — but the core logic remains the same.
-
+    ![Schematic depicting ONT_Amp workflow](images/ONT_Amp_workflow.png)
 
 3. **🧰 Install ONT-AmpSeq (Bash version)**  
 
